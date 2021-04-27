@@ -1,3 +1,4 @@
+
 public class Task implements TaskIF {
     private String[][] zweiD;
 
@@ -17,5 +18,21 @@ public class Task implements TaskIF {
         }
         return true;
     }
+    public boolean sindAlleWerteDerSequenzErlaubt(String[] sequenz) {
+		String test = "";
+		for (int i = 0; i < zweiD.length; i++) {
+			for (int j = 0; j < zweiD[i].length; j++) {
+				test += zweiD[i][j];
+			}
+		}
+		for (int k = 0; k < sequenz.length; k++) {
+			if (!(test.contains(sequenz[k]))) {
+				return false;
+			}
+		}
+		return true;
+
+	}
+    
 
 }

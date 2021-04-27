@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 
 
@@ -67,5 +68,22 @@ public class TestTask {
 	public void testsindAlleWerteDerSequenzErlaubtTrue() {
 		assertEquals(true, task.sindAlleWerteDerSequenzErlaubt(sequenz2));
 		assertEquals(true, task.sindAlleWerteDerSequenzErlaubt(sequenz4));
+	}
+	@Test
+	@DisplayName("Soll true ergeben, gdw. ein String in der Sequenz nicht doppelt vorkommt.")
+	public void test_isWellSortedFalseWeilStringDoppelt() {
+		assertEquals(true, task.kommtJederStringNurEinmalVor(sequenz0));
+	}
+	@Test
+	@DisplayName("Testet ob isWellSorted den Wert true ausgibt")
+	public void test_isWellSort1() {
+		assertEquals(true, task.isWellSorted(sequenz0));
+	}
+
+	
+	@Test
+	@DisplayName("Testet ob isWellSorted den Wert false ausgibt")
+	public void test_isWellSortedFalse() {
+		assertEquals(false, task.isWellSorted(sequenz1));
 	}
 }
