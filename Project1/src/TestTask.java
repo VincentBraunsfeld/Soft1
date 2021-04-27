@@ -82,7 +82,7 @@ public class TestTask {
 
 	
 	@Test
-	@DisplayName("Testet ob isWellSorted den Wert false ausgibt")
+	@DisplayName("Testet ob isWellSorted den Wert false ausgibt.")
 	public void test_isWellSortedFalse() {
 		assertEquals(false, task.isWellSorted(sequenz1));
 	}

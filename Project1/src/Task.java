@@ -1,24 +1,25 @@
 
 public class Task implements TaskIF {
-    private String[][] zweiD;
+	private String[][] zweiD;
 
-    public Task(String[][] s) {
-        zweiD = s;
-    }
+	public Task(String[][] s) {
+		zweiD = s;
+	}
 
+	
+	public boolean kommtJederStringNurEinmalVor(String[] sequenz) {
+		String kommtJederStringNurEinmalVor = "";
+		for (int i = 0; i < sequenz.length; i++) {
+			if (kommtJederStringNurEinmalVor.contains(sequenz[i])) { // Kommt jeder String der Sequenz nur einmal vor?
+				return false;
+			}
+			kommtJederStringNurEinmalVor += sequenz[i];
+		}
+		return true;
+	}
+	
 
-    
-    public boolean kommtJederStringNurEinmalVor(String[] sequenz) {
-        String kommtJederStringNurEinmalVor = "";
-        for (int i = 0; i < sequenz.length; i++) {
-            if (kommtJederStringNurEinmalVor.contains(sequenz[i])) { // Kommt jeder String der Sequenz nur einmal vor?
-                return false;
-            }
-            kommtJederStringNurEinmalVor += sequenz[i];
-        }
-        return true;
-    }
-    public boolean sindAlleWerteDerSequenzErlaubt(String[] sequenz) {
+	public boolean sindAlleWerteDerSequenzErlaubt(String[] sequenz) {
 		String test = "";
 		for (int i = 0; i < zweiD.length; i++) {
 			for (int j = 0; j < zweiD[i].length; j++) {
@@ -33,6 +34,4 @@ public class Task implements TaskIF {
 		return true;
 
 	}
-    
-
 }
