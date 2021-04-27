@@ -86,4 +86,21 @@ public class TestTask {
 	public void test_isWellSortedFalse() {
 		assertEquals(false, task.isWellSorted(sequenz1));
 	}
+	@Test
+	@DisplayName("Testet ob isWellSorted trotz Kreis in den Abhängigkeiten True ist")
+	public void test_isWellSortedMitKreis() {
+		assertEquals(true, task1.isWellSorted(sequenz0));
+	}
+	
+	@Test
+	@DisplayName("Testet ob bei unsinnigen Abhängikeiten wie {A,A} false zurückgegeben wird")
+	public void test_isWellSortedMit() {
+		assertEquals(false, task2.isWellSorted(sequenz5));
+	}
+	
+	@Test
+	@DisplayName("Soll isWellSorted auf Transitivität prüfen")
+	public void test_isWellSorted() {
+		assertEquals(false, task3.isWellSorted(sequenz6));
+	}
 }
