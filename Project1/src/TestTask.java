@@ -55,4 +55,17 @@ public class TestTask {
     public void testTruekommtJederStringNurEinmanlVor() {
         assertEquals(false, task.kommtJederStringNurEinmalVor(sequenz2));
     }
+    @Test
+	@DisplayName("Soll false ergeben, wenn die Sequenz einen String enthät, der nicht im 2D array enthalten ist.")
+	public void testsindAlleWerteDerSequenzErlaubtFalse() {
+		assertEquals(false, task.sindAlleWerteDerSequenzErlaubt(sequenz3));
+
+	}
+	
+	@Test
+	@DisplayName("Soll true ergeben, wenn die Sequenz einen String enthät, der nicht im 2D array enthalten ist.")
+	public void testsindAlleWerteDerSequenzErlaubtTrue() {
+		assertEquals(true, task.sindAlleWerteDerSequenzErlaubt(sequenz2));
+		assertEquals(true, task.sindAlleWerteDerSequenzErlaubt(sequenz4));
+	}
 }
