@@ -53,6 +53,6 @@ public class TestTask {
     @Test
     @DisplayName("Soll false ergeben, gdw. ein String in der Sequenz doppelt vorkommt.")
     public void testTruekommtJederStringNurEinmanlVor() {
-        assertEquals(false, task.kommtJederStringNurEinmalVor(String[] ({ "A", "C", "C", "D" }));
+        assertEquals(false, task.kommtJederStringNurEinmalVor(sequenz2));
     }
 }
